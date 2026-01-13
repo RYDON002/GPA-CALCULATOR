@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RDN TECH - Login</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="left">
+    <h1>RDN ௹</h1>a
+    <h2>RDN TECH</h2>
+    <p>Smart GPA Tracking System</p>
+  </div>
+
+  <div class="right">
+    <div id="loginBox" class="box active">
+      <h2>Login</h2>
+      <input id="loginUser" type="text" placeholder="Username">
+      <input id="loginPass" type="password" placeholder="Password">
+      <p class="small">Forgot password?</p>
+      <button onclick="login()">Login</button>
+      <button class="alt" onclick="showSignup()">Signup</button>
+    </div>
+
+    <div id="signupBox" class="box">
+      <h2>Signup</h2>
+      <input id="fullName" type="text" placeholder="Full Name">
+      <input id="signupUser" type="text" placeholder="Username">
+      <input id="signupPass" type="password" placeholder="Password">
+      <input id="signupPass2" type="password" placeholder="Confirm Password">
+      <button onclick="signup()">Create Account</button>
+      <button class="alt" onclick="showLogin()">Back to Login</button>
+    </div>
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
