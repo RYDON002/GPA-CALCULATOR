@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GPA & CGPA Calculator - AUK</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="AUK LOGO.jpg" alt="AUK Logo">
+    </div>
+    <h1>GPA & CGPA Calculator - AUK</h1>
+    <div class="subtitle">To calculate your GPA/CGPA, fill out this form below:</div>
+    <div style="text-align: center;">
+      <label>Semester Name:</label>
+      <input type="text" id="semesterName">
+      <button onclick="createSemester()">Create Semester</button>
+    </div>
+    <div class="export-btns">
+      <button onclick="saveData()">Save Data</button>
+      <button onclick="loadData()">Load Saved Data</button>
+      <button onclick="exportToExcel()">Export to Excel</button>
+      <button onclick="exportToPDF()">Export to PDF</button>
+    </div>
+    <div class="done-btn-container" id="doneBtnContainer">
+      <button onclick="saveData()">Done</button>
+      <button onclick="startAnotherSemester()">Start New</button>
+    </div>
+    <div id="semesters"></div>
+    <div class="result" id="cgpaResult"></div>
+    <div class="comment-box">
+      <h3>Send Us a Comment</h3>
+      <textarea id="userComment" placeholder="Write your comment here..."></textarea><br>
+      <button onclick="submitComment()">Submit Comment</button>
+    </div>
+    <div class="footer">Developed by RYDON</div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
