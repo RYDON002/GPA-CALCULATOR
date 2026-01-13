@@ -46,7 +46,7 @@ function login(){
 
   if(found){
     localStorage.setItem("loggedUser", user);
-    window.location.href = "gpa.html"; // your GPA page
+    window.location.href = "index.html"; // redirect to GPA calculator
   }else{
     alert("Wrong username or password");
   }

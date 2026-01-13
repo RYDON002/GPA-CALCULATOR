@@ -1,4 +1,19 @@
+// Optional: Logout function for user session management
+function logout() {
+	localStorage.removeItem("loggedUser");
+	window.location.href = "login.html";
+}
 let semesters = [];
+
+// Get logged-in user
+const loggedUser = localStorage.getItem("loggedUser");
+if (!loggedUser) {
+	window.location.href = "login.html";
+}
+
+function getUserKey() {
+	return `savedSemesters_${loggedUser}`;
+}
 function gradeToPoint(grade) {
 	switch (grade.toUpperCase()) {
 		case 'A': return 5;
@@ -105,11 +120,11 @@ function calculateCGPA() {
 	document.getElementById("cgpaResult").innerText = `Cumulative CGPA: ${cgpa}`;
 }
 function saveData() {
-	localStorage.setItem("savedSemesters", JSON.stringify(semesters));
+	localStorage.setItem(getUserKey(), JSON.stringify(semesters));
 	alert("Data saved!");
 }
 function loadData() {
-	const saved = localStorage.getItem("savedSemesters");
+	const saved = localStorage.getItem(getUserKey());
 	if (saved) {
 		semesters = JSON.parse(saved);
 		document.getElementById("semesters").innerHTML = "";
@@ -172,3 +187,8 @@ function submitComment() {
 	}
 }
 // ...existing code... 
+
+// On page load, auto-load user data if present
+window.addEventListener("DOMContentLoaded", function() {
+	loadData();
+});
